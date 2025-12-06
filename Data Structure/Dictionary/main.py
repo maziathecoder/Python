@@ -1,11 +1,11 @@
-test_dict = {'Codingal' : 2, 'is' : 2, 'best' : 2, 'for' : 2, 'Coding' : 1}
-  
-# printing original dictionary
-print("The original dictionary : " +  str(test_dict))
-# Initialize value 
-K = 2
-res = 0
-for key in test_dict:
-    if test_dict[key] == K:
-        res = res + 1
-print("Frequency of K is : " + str(res))
+country_code = {'India' : '0091',
+                'Australia' : '0025',
+                'Nepal' : '00977'}
+ 
+# search dictionary for country code of India
+print("Country code for India -")
+print(country_code.get('India', 'Not Found'))
+ 
+# search dictionary for country code of Japan
+print("Country code for Japan -")
+print(country_code.get('Japan', 'Not Found'))
