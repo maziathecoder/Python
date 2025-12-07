@@ -1,13 +1,11 @@
-import array as arr
+x = frozenset([1, 2, 3, 4, 5])
+y = frozenset([3, 4, 5, 6, 7])
 
-# create an array
-array_num = arr.array('i', [1, 3, 5, 3, 7, 9, 3])
-print("Original array: "+str(array_num))
+#use isdisjoint(). Return True if the set has no elements in common with other. 
+print(x.isdisjoint(y))
 
-# count number of occurences
-print("Number of occurrences of the number 3 in the said array: "+str(array_num.count(3)))
+#use difference(). Return a new set with elements in the set that are not in the others.
+print(x.difference(y))
 
-# reverse the array 
-array_num.reverse()
-print("Reverse the order of the items:")
-print(str(array_num))
+#new set with elements from both x and y
+print(x | y)
