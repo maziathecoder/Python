@@ -1,23 +1,25 @@
-# Zip elements of two lists
-s1 = {2, 3, 1}
-s2 = {'b', 'a', 'c'}
-s3 = list(zip(s1, s2))
-print(s3,"\n")
+# ---------- Part 1: Odd and Even Numbers ----------
+
+# Take a number from the user
+num = int(input("Enter a number: "))
+
+# List of odd numbers under the input value
+odd_numbers = [i for i in range(1, num) if i % 2 != 0]
+
+# List of even numbers under the input value
+even_numbers = [i for i in range(1, num) if i % 2 == 0]
+
+print("Odd numbers:", odd_numbers)
+print("Even numbers:", even_numbers)
 
 
-# Zip elements of two lists
-# Print elements one by one, but elements of 2nd list will be in reverse order
-list1 = [10, 20, 30, 40]
-list2 = [100, 200, 300, 400]
+# ---------- Part 2: Capitalize First Letter of Fruits ----------
 
-for x, y in zip(list1, list2[::-1]):
-    print(x, y)
+# Create a list of fruits
+fruits = ["apple", "banana", "cherry", "mango", "orange"]
 
+# Convert first letter of each fruit to capital
+capitalized_fruits = [fruit.capitalize() for fruit in fruits]
 
-# Zip into dictionary
-stocks = ['reliance', 'infosys', 'tcs']
-prices = [2175, 1127, 2750]
-
-new_dict = {stocks: prices for stocks,
-			prices in zip(stocks, prices)}
-print('\n{}'.format(new_dict))
+print("Original fruits list:", fruits)
+print("Capitalized fruits list:", capitalized_fruits)
