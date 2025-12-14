@@ -1,25 +1,73 @@
-# ---------- Part 1: Odd and Even Numbers ----------
+# Import necessary modules
+import random 
+import time
 
-# Take a number from the user
-num = int(input("Enter a number: "))
+# Pick a number between 1 and 100
+number=random.randint(1, 100) 
 
-# List of odd numbers under the input value
-odd_numbers = [i for i in range(1, num) if i % 2 != 0]
+def intro():
+	print("May I ask you for your name?")
+	# declaring name variable global so it can be accessed outside the function
+	global name
+	name = input() #asks for the name
+	print(name + ", we are going to play a game. I am thinking of a number between 1 and 100")
+	if(number%2==0):
+		x='even'
+	else:
+		x='odd'
+	print("\nThis is an {} number".format(x))
+	time.sleep(.5)
+	print("Go ahead. Guess!")
 
-# List of even numbers under the input value
-even_numbers = [i for i in range(1, num) if i % 2 == 0]
+def pick():
+	guessesTaken = 0
 
-print("Odd numbers:", odd_numbers)
-print("Even numbers:", even_numbers)
+	#if the number of guesses is less than 6
+	while guessesTaken < 6:
+		time.sleep(.25)
+		#inserts the place to enter guess
+		enter=input("Guess: ") 
 
+		#check if a number was entered
+		try: 
 
-# ---------- Part 2: Capitalize First Letter of Fruits ----------
+			#stores the guess as an integer instead of a string 
+			guess = int(enter)    
 
-# Create a list of fruits
-fruits = ["apple", "banana", "cherry", "mango", "orange"]
+			if guess<=100 and guess>=1: #if they are in range
+				guessesTaken=guessesTaken+1 #adds one guess each time the player is wrong
+				if guessesTaken<6:
+					if guess<number:
+						print("The guess of the number that you have entered is too low")
+					if guess>number:
+						print("The guess of the number that you have entered is too high")
+					if guess != number:
+						time.sleep(.5)
+						print("Try Again!")
+				
+				#if the guess is right, then we are going to jump out of the while block
+					if guess==number:
+						break 
 
-# Convert first letter of each fruit to capital
-capitalized_fruits = [fruit.capitalize() for fruit in fruits]
+			
+			if guess>100 or guess<1: 
+				print("Silly Goose! That number isn't in the range!")
+				time.sleep(.25)
+				print("Please enter a number between 1 and 100")
 
-print("Original fruits list:", fruits)
-print("Capitalized fruits list:", capitalized_fruits)
+		except: #if a number wasn't entered
+			print("I don't think that "+enter+" is a number. Sorry")
+			
+	if guess == number:
+		guessesTaken = str(guessesTaken)
+		print('Good job, {}! You guessed my number in {} guesses!'.format(name, guessesTaken))
+
+	if guess != number:
+		print('Nope. The number I was thinking of was ' + str(number))
+
+playagain="yes"
+while playagain=="yes" or playagain=="y" or playagain=="Yes":
+	intro()
+	pick()
+	print("Do you want to play again?")
+	playagain=input()
