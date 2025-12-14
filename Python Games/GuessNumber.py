@@ -1,8 +1,13 @@
+# import necessary modules
 import random
 import time
+
+# pick a number between 1 and 100
 number = random.randint(1, 100)
+
 def intro():
     print("May I ask you for your name?")
+    #declaaring name variable global
     global name 
     name = input()
     print(name + ", we are going to play a game. I am thinking of a number from 1 to 100.")
