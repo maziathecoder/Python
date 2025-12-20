@@ -1,22 +1,24 @@
-# create class
-class Parrot:
+class Dog:
+    # Class variable (shared by all objects)
+    species = "Canis familiaris"
 
-    # class attribute
-    species = "bird"
+    # Constructor with two instance variables
+    def __init__(self, breed, age):
+        self.breed = breed      # Instance variable
+        self.age = age          # Instance variable
 
-    # instance attribute
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    # Method to display dog details
+    def display_details(self):
+        print("Species:", Dog.species)
+        print("Breed:", self.breed)
+        print("Age:", self.age, "years")
+        print("------------------------")
 
-# instantiate the Parrot class
-blu = Parrot("Blu", 10)
-woo = Parrot("Woo", 15)
 
-# access the class attributes
-print("Blu is a {}".format(blu.species))
-print("Woo is also a {}".format(woo.species))
+# Creating two different Dog objects (different breeds)
+dog1 = Dog("Labrador Retriever", 3)
+dog2 = Dog("German Shepherd", 5)
 
-# access the instance attributes
-print("{} is {} years old".format( blu.name, blu.age))
-print("{} is {} years old".format( woo.name, woo.age))
+# Displaying their details
+dog1.display_details()
+dog2.display_details()
