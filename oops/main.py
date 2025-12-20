@@ -1,16 +1,22 @@
 # create class
-class Vehicle:
+class Parrot:
 
-	# create init method
-    def __init__(self, max_speed, mileage):
+    # class attribute
+    species = "bird"
 
-		# bind the arguments
-        self.max_speed = max_speed
-        self.mileage = mileage
+    # instance attribute
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-# Object creation
-modelX = Vehicle(240, 18)
+# instantiate the Parrot class
+blu = Parrot("Blu", 10)
+woo = Parrot("Woo", 15)
 
-# access the variables inside init method
-print("Model Max Speed:",modelX.max_speed)
-print("Model Mileage:", modelX.mileage)
+# access the class attributes
+print("Blu is a {}".format(blu.species))
+print("Woo is also a {}".format(woo.species))
+
+# access the instance attributes
+print("{} is {} years old".format( blu.name, blu.age))
+print("{} is {} years old".format( woo.name, woo.age))
