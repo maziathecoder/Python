@@ -3,7 +3,8 @@ def generate_password(lenght):
     lowerCase = "abcdefghijklmnopqrstuvwxyz"
     upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     numbers = "0123456789"
-    all_chars = lowerCase + upperCase + numbers
+    sp_char = "!@#$%^&*()<>/?|"
+    all_chars = lowerCase + upperCase + numbers + sp_char
     password = ""
     for _ in range(lenght):
         password += random.choice(all_chars)
