@@ -1,18 +1,21 @@
-# Class creation
-class myClass:
+class Computer:
 
-	# private variable
-	__privateVar = 27;
+    def __init__(self):
+        self.__maxprice = 900
 
-	# private method
-	def __privMeth(self):
-		print("I'm inside class myClass")
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
 
-	# Function to print value of private variable
-	def hello(self):
-		print("Private Variable value: ",myClass.__privateVar)
+    def setMaxPrice(self, price):
+        self.__maxprice = price
 
-# Object creation and method call
-foo = myClass()
-foo.hello()
-foo.__privMeth
+c = Computer()
+c.sell()
+
+# change the price
+c.__maxprice = 1000
+c.sell()
+
+# using setter function
+c.setMaxPrice(1000)
+c.sell()
