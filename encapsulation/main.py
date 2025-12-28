@@ -1,13 +1,16 @@
-# Create class
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
+class Reverse:
+    def __init__(self, s=""):
+        self.s = s
 
-	# Method to print points in coordinate format
-    def __str__(self):
-        return "({0}, {1})".format(self.x, self.y)
+    def reverse_string(self):
+        return self.s[::-1]
 
-# Create Object
-p1 = Point(2, 3)
-print(p1)
+
+# taking input from the user
+word = input("Enter a word: ")
+
+# creating object of the class
+obj = Reverse(word)
+
+# printing the reversed string
+print("Reversed string:", obj.reverse_string())
